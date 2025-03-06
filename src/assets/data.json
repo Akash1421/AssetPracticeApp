@@ -1,0 +1,28 @@
+{
+    "Employees" : [ 
+        { 
+            "id":"0001",  
+            "fullname":"James", 
+            "mail":"James@test.com", 
+            "roles":"Developer", 
+            "address":"Hyderabad", 
+            "contactNo":"0905846161"
+        }, 
+        { 
+            "id":"0002",  
+            "fullname":"Jhon", 
+            "mail":"Jhon@test.com", 
+            "roles":"Tester", 
+            "address":"Banglore", 
+            "contactNo":"0939219291"
+        }, 
+        { 
+           "id":"0003",  
+            "fullname":"Smith", 
+            "mail":"smith@test.com", 
+            "roles":"Sales", 
+            "address":"Hyderabad", 
+            "contactNo":"0949299291" 
+        }
+    ] 
+}

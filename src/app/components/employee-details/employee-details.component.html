@@ -1,0 +1,76 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+<div class="header"> 
+
+    <mat-toolbar> 
+        <span>Employee Details</span>
+        <span class="spacer"></span> 
+        <button mat-raised-button color="primary" (click)="addEmployee()">Add Employee</button>
+    </mat-toolbar> 
+</div>
+<div class="container">  
+    <div *ngIf="employees"> 
+        <table mat-table [dataSource]="employees" class="mat-elevation-z8">  
+            <!-- id-column -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>  
+              
+            <!-- fullName -->
+            <ng-container matColumnDef="fullName"> 
+                <th mat-header-cell *matHeaderCellDef>fullName</th> 
+                <td mat-cell *matCellDef="let element">{{element.fullName}}</td>
+            </ng-container> 
+     
+            <!-- mail -->
+             <ng-container matColumnDef="mail"> 
+                <th mat-header-cell *matHeaderCellDef>mail</th> 
+                <td mat-cell *matCellDef="let element">{{element.mail}}</td>
+             </ng-container> 
+    
+               <!-- role -->
+             <ng-container matColumnDef="role"> 
+                <th mat-header-cell *matHeaderCellDef>role</th> 
+                <td mat-cell *matCellDef="let element">{{element.role}}</td>
+             </ng-container> 
+              
+             <!-- experience -->
+             <ng-container matColumnDef="experience"> 
+                <th mat-header-cell *matHeaderCellDef>Experience</th> 
+                <td mat-cell *matCellDef="let element">{{element.experience}}</td>
+             </ng-container> 
+               
+             <!-- contactNo -->
+             <ng-container matColumnDef="contactNo"> 
+                <th mat-header-cell *matHeaderCellDef>contactNo</th> 
+                <td mat-cell *matCellDef="let element">{{element.contactNo}}</td>
+             </ng-container> 
+               
+             <!-- DateofJoining -->
+             <ng-container matColumnDef="date_of_joining"> 
+                <th mat-header-cell *matHeaderCellDef>date_of_joining</th> 
+                <td mat-cell *matCellDef="let element">{{element.dateOfJoining}}</td>
+             </ng-container> 
+
+              <!--Action column-->
+              <ng-container matColumnDef="Action"> 
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button color="primary" (click)="updateEmployee(element)" > 
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="deleteEmployee(element.id)"> 
+                        <mat-icon>delete</mat-icon>
+                    </button>
+
+                </td>
+            </ng-container>
+              
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> 
+            <tr mat-row *matRowDef="let row; columns:displayedColumns;"></tr>
+        </table>
+    </div>
+
+</div>
+

@@ -1,0 +1,17 @@
+.row{ 
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+h2{ 
+    text-align: center;
+}
+.form-field{ 
+    flex: 1;
+    min-width: 200px;
+}
+mat-form-field{ 
+    flex: 1;
+    width: 100%;
+}

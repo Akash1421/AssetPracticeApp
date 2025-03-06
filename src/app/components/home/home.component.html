@@ -1,0 +1,91 @@
+<div class="home-container">
+    <h1>Welcome to the Home Page!</h1>
+    <p>You have successfully logged in.</p>
+  
+    <div class="cards-container">
+      <!-- Roles Card -->
+      <div class="flip-card" (click)="navigateTo('roles')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title>Roles</mat-card-title>
+              </mat-card-header>
+              <mat-card-content> 
+                
+              </mat-card-content>
+    
+            </mat-card>
+          </div>
+          <div class="flip-card-back">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title>Roles Details</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>Manage user roles and permissions here.</p>
+              </mat-card-content>
+              <!-- <mat-card-content>
+                <p>Total Roles: 5</p>
+                <p>Active Roles: 3</p>
+                <p>Inactive Roles: 2</p>
+              </mat-card-content> -->
+            </mat-card>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Assets Card -->
+      <div class="flip-card" (click)="navigateTo('assets')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title>Assets</mat-card-title>
+              </mat-card-header>
+              
+            </mat-card>
+          </div>
+          <div class="flip-card-back">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title>Assets Details</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <mat-card-content>
+                    <p>Manage company assets and inventory here.</p>
+                  </mat-card-content>
+                <!-- <p>Total Assets: 100</p>
+                <p>Available Assets: 70</p>
+                <p>Assigned Assets: 30</p> -->
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Employees Card -->
+      <div class="flip-card" (click)="navigateTo('employee-details')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title>Employees</mat-card-title>
+              </mat-card-header>
+            
+            </mat-card>
+          </div>
+          <div class="flip-card-back">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title>Employees Details</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>Manage employee records and details here.</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

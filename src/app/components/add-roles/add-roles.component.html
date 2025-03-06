@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body> 
+    <form [formGroup]="addrolesForm" (ngSubmit)="onSubmit()">
+        <div class="row"> 
+
+        </div>
+    <!--name and created on fields-->
+    <div class="row"> 
+        <mat-form-field appearance="fill" class="form-field"> 
+            <mat-label>Role</mat-label>
+            <input matInput type="text" formControlName="name" placeholder="enter role"/>
+            <mat-error *ngIf="addrolesForm.get('name')?.hasError('required') && addrolesForm.get('name')?.touched">
+                Name is required
+            </mat-error>
+            <mat-error *ngIf="addrolesForm.get('name')?.hasError('minlength') && !addrolesForm.get('name')?.hasError('required')"> 
+                Name must be atleast 3 characters
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-field"> 
+            <mat-label>Created On</mat-label> 
+            <input matInput [matDatepicker]="picker" formControlName="createdOn"/>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="addrolesForm.get('createdOn')?.hasError('required') && addrolesForm.get('createdOn')?.touched"> 
+                Created date must be specified
+            </mat-error>
+        </mat-form-field>
+    </div> 
+
+    <!--description column-->
+    <div class="row"> 
+        <mat-form-field appearance="fill" class="form-field"> 
+            <mat-label>Description</mat-label>
+            <textarea matInput="textarea" formControlName="description"></textarea>
+            <mat-error *ngIf="addrolesForm.get('description')?.hasError('required') && addrolesForm.get('description')?.touched">
+                Add some description to the role
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <!--Elevated privilage-->
+    <div class="row"> 
+            <mat-label>Elevated privilage</mat-label>
+            <mat-slide-toggle formControlName="elevatedPrivilage"></mat-slide-toggle>
+    </div>
+
+    <!--Action buttons-->
+    <div class="row"> 
+        <button mat-raised-button color="primary" type="submit" [disabled]="addrolesForm.invalid">{{data?'Update':'save'}}</button>
+        <button mat-raised-button color="danger" type="button" [mat-dialog-close]="false">Cancel</button>
+    </div>
+</form>
+</body>
+</html>

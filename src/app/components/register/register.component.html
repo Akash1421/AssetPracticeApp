@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()"> 
+
+        <div class="container"> 
+            <div class="row"> 
+                <mat-card class="header">
+                    <mat-card-header> 
+                        <h2>REGISTRATION FORM</h2>
+                    </mat-card-header>
+                </mat-card>
+            </div>
+            <!--fields of firstname and lastname-->
+            <div class="row"> 
+                <mat-form-field class="form-field" >
+                    <mat-label>FirstName</mat-label>
+                    <input matInput formControlName="firstname">
+                </mat-form-field>
+                <mat-form-field class="form-field"> 
+                    <mat-label>LastName</mat-label>
+                    <input matInput formControlName="lastname">
+                </mat-form-field>
+            </div>
+
+            <!--dateofbirth and gender-->
+            <div class="row"> 
+                <mat-form-field class="form-field">
+                    <mat-label>DateofBirth</mat-label> 
+                    <input matInput [matDatepicker]="picker" formControlName="dateofbirth">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="form-field"> 
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName="gender">
+                        <mat-option>Male</mat-option>
+                        <mat-option>Female</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <!--Username and mobileno fields-->
+            <div class="row"> 
+                <mat-form-field class="form-field"> 
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="username">
+                </mat-form-field>
+                <mat-form-field class="form-field"> 
+                    <mat-label>MobileNo</mat-label>
+                    <input matInput="number" formControlName="mobileno">
+                </mat-form-field>
+            </div>
+
+            <!--password and confirm password fields-->
+           <div class="row"> 
+            <mat-form-field class="form-field"> 
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password">
+            </mat-form-field>
+            <mat-form-field class="form-field"> 
+                <mat-label>Confirm Password</mat-label>
+                <input matInput formControlName="confirmpassword">
+            </mat-form-field>
+           </div>
+        </div>
+    </form>
+</body>
+</html>

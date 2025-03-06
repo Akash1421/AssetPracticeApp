@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <form [formGroup]="addAssestForm" (ngSubmit)="onSubmit()"> 
+        <div class="row"> 
+            <h3 class="title">ADD NEW ASSET</h3>
+        </div>
+        <!--Assest name and manufacturer field-->
+        <div class="row"> 
+            <mat-form-field appearance="fill" class="form-field"> 
+                <mat-label>Asset Name</mat-label>
+                <input matInput type="text" formControlName="name" placeholder="enter assest "/>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="form-field"> 
+                <mat-label>Manufacturer</mat-label>
+                <input matInput type="text" formControlName="manufacturer" placeholder="Enter manufacturer"/>
+            </mat-form-field>
+        </div>
+
+        <!--ModelNumber and ModelCategory-->
+        <div class="row"> 
+            <mat-form-field appearance="fill" class="form-field"> 
+                <mat-label>ModelNumber</mat-label>
+                <input matInput type="number" formControlName="modelnumber" placeholder="enter model number"/>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="form-field"> 
+                <mat-label>ModelCategory</mat-label>
+                <input matInput type="text" formControlName="modelcategory" placeholder="enter model category"/>
+            </mat-form-field>
+        </div>
+
+        <!--AssignedTo and Cost-->
+        <div class="row"> 
+            <mat-form-field appearance="fill" class="form-field"> 
+                <mat-label>Assign To</mat-label>
+                <mat-select formControlName="assignedto"> 
+                    <mat-option *ngFor="let employee of EmployeeList" [value]="employee">{{employee}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="form-field"> 
+                <mat-label>Cost</mat-label>
+                <input matInput type="text" formControlName="cost" placeholder="enter cost"/>
+            </mat-form-field>
+        </div>
+
+        <!--Action column-->
+        <div class="action"> 
+            <button mat-raised-button color="primary" type="submit" [disabled]="addAssestForm.invalid">{{data?'update':'Save'}}</button>
+            <button mat-raised-button color="danger" type="button" [mat-dialog-close]="false">Cancel</button>
+        </div>
+
+    </form>
+</body>
+</html>

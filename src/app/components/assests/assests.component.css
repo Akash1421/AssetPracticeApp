@@ -1,0 +1,15 @@
+.header{ 
+    width: 100%;
+  
+    
+}
+.spacer{ 
+    flex: 1;
+}
+table{ 
+    width: 100%;
+} 
+th,td{ 
+    white-space: nowrap; 
+    padding: 8px;
+} 

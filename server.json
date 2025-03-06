@@ -1,0 +1,180 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "employee": [
+    {
+      "id": "0001",
+      "fullName": "kevin",
+      "mail": "test@test.com",
+      "role": "Admin",
+      "experience": "8",
+      "contactNo": 939492919,
+      "DateofJoining": "2025-01-09T08:00:00.000Z"
+    },
+    {
+      "id": "0002",
+      "fullName": "test",
+      "mail": "test1@test.com",
+      "role": "Manager",
+      "experience": "2",
+      "contactNo": 930201023,
+      "DateofJoining": "2/12/2025"
+    },
+    {
+      "id": "0003",
+      "fullName": "phil",
+      "mail": "phil@test.com",
+      "role": "Developer",
+      "experience": "2",
+      "contactNo": 819292919,
+      "DateofJoining": "2/12/2025"
+    },
+    {
+      "id": "0004",
+      "fullName": "james",
+      "mail": "james@test.com",
+      "role": "HR",
+      "experience": "5",
+      "contactNo": 930200102,
+      "DateofJoining": "2/12/2025"
+    },
+    {
+      "id": "0005",
+      "fullName": "test1",
+      "mail": "test1@test.com",
+      "role": "Developer",
+      "experience": "5",
+      "contactNo": 930101830,
+      "DateofJoining": "2/12/2025"
+    },
+    {
+      "id": "0006",
+      "fullName": "test2",
+      "mail": "test2@test.com",
+      "role": "Developer",
+      "experience": "3",
+      "contactNo": 92083202,
+      "DateofJoining": "2/12/2025"
+    },
+    {
+      "id": "wUGH_Gm",
+      "fullName": "test2",
+      "mail": "test2@test.com",
+      "role": "Developer",
+      "experience": "3",
+      "contactNo": 920832023,
+      "DateofJoining": "2025-01-29T08:00:00.000Z"
+    },
+    {
+      "id": "wOHv0AL",
+      "fullName": "kill",
+      "mail": "kill@save.com",
+      "role": "Developer",
+      "experience": "4",
+      "contactNo": 9372923123,
+      "DateofJoining": "2025-01-14T08:00:00.000Z"
+    },
+    {
+      "id": "-31Gv2I",
+      "fullName": "testing",
+      "mail": "testing@email.com",
+      "role": "Manager",
+      "experience": "5",
+      "contactNo": 920832023,
+      "DateofJoining": "2025-01-29T08:00:00.000Z"
+    },
+    {
+      "id": "ev1CWLR",
+      "fullName": "Ronaldo",
+      "mail": "ronaldo@test.com",
+      "role": "Manager",
+      "experience": "6",
+      "contactNo": 920832023,
+      "DateofJoining": "2025-01-30T08:00:00.000Z"
+    },
+    {
+      "id": "fs6ruDZ",
+      "fullName": "messi",
+      "mail": "messi@gmail.com",
+      "role": "Developer",
+      "experience": "3",
+      "contactNo": 3489231978,
+      "DateofJoining": "2025-01-07T08:00:00.000Z"
+    },
+    {
+      "id": "oGNszzg",
+      "fullName": "test5",
+      "mail": "test5@test.com",
+      "role": "Manager",
+      "experience": "9",
+      "contactNo": 23409494238,
+      "DateofJoining": "2025-02-11T18:30:00.000Z",
+      "ManagerLists": ""
+    },
+    {
+      "id": "csttduq",
+      "fullName": "test5",
+      "mail": "test5@test.com",
+      "role": "Manager",
+      "experience": "9",
+      "contactNo": 23409494238,
+      "DateofJoining": "2025-02-11T18:30:00.000Z",
+      "ManagerLists": ""
+    },
+    {
+      "id": "MK0S07x",
+      "fullName": "test6",
+      "mail": "test5@test.com",
+      "role": "Developer",
+      "experience": "9",
+      "contactNo": 23409494238,
+      "DateofJoining": "2025-02-11T18:30:00.000Z",
+      "ManagerLists": ""
+    },
+    {
+      "id": "87RqjKK",
+      "fullName": "kevin",
+      "mail": "kevin@test.com",
+      "role": "Developer",
+      "experience": "4",
+      "contactNo": 23409494238,
+      "DateofJoining": "2025-02-11T18:30:00.000Z",
+      "ManagerLists": ""
+    },
+    {
+      "id": "VRlenSV",
+      "fullName": "kevin",
+      "mail": "kevin@test.com",
+      "role": "Manager",
+      "experience": "4",
+      "contactNo": 23409494238,
+      "DateofJoining": "2025-02-11T18:30:00.000Z",
+      "ManagerLists": ""
+    },
+    {
+      "id": "j85d98_",
+      "fullName": "kevin",
+      "mail": "kevin@test.com",
+      "role": "Manager",
+      "experience": "4",
+      "contactNo": 23409494238,
+      "DateofJoining": "2025-02-11T18:30:00.000Z",
+      "ManagerLists": ""
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

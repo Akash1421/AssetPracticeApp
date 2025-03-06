@@ -1,0 +1,8 @@
+<form [formGroup]="myForm">  
+  <mat-form-field appearance="fill" id="inputField" formControlName="inputField"> 
+    <mat-label>Enter name</mat-label> 
+    <input matInput/> 
+    <mat-error *ngIf="myForm.get('inputField')?.invalid && myForm.get('inputField')?.touched">Enter name</mat-error>
+  </mat-form-field>
+
+</form>

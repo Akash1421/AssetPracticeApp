@@ -1,0 +1,17 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="header">
+    <div class="header-left">
+        <mat-icon>whatshot</mat-icon>
+        <span (click)="navigateTo('home')" style="cursor: pointer;">Assets Application</span>
+    </div>
+    <div class="header-right">
+        <input type="text" class="search-box" placeholder="Search...">
+        <button mat-button class="menu-button" [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/roles">Roles</button>
+            <button mat-menu-item routerLink="/assests">Assets Allocation</button>
+            <button mat-menu-item routerLink="/employee-details">Employee Details</button>
+        </mat-menu>
+        <mat-icon style="font-size: 30px;">account_circle</mat-icon>
+    </div>
+</div>

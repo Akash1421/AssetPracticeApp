@@ -1,0 +1,79 @@
+<div class="body">  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+  <div class="header" fxLayout="row wrap" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%"> 
+    <mat-toolbar color="primary"> 
+      <h2>Employee Data</h2>  
+      <span class="example-spacer"></span> 
+      <button mat-button (click)="addEditEmployeeForm()">Add Employee</button>
+    </mat-toolbar>
+  </div>  
+</div>  
+
+<div class="container"> 
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+        <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+      </ng-container>
+
+      <!-- Full Name Column -->
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let element"> {{ element.fullName }} </td>
+      </ng-container>
+
+      <!-- Mail Column -->
+      <ng-container matColumnDef="mail">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Mail </th>
+        <td mat-cell *matCellDef="let element"> {{ element.mail }} </td>
+      </ng-container>
+
+      <!-- Role Column -->
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Role </th>
+        <td mat-cell *matCellDef="let element"> {{ element.role }} </td>
+      </ng-container> 
+
+      <!-- Experience Column -->
+      <ng-container matColumnDef="experience">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Experience </th>
+        <td mat-cell *matCellDef="let element"> {{ element.experience }} </td>
+      </ng-container> 
+      
+      <!-- Contact No Column -->
+      <ng-container matColumnDef="contactNo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact No </th>
+        <td mat-cell *matCellDef="let element"> {{ element.contactNo }} </td>
+      </ng-container>  
+
+      <!-- Date of Joining Column -->
+      <ng-container matColumnDef="DateofJoining">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of Joining </th>
+        <td mat-cell *matCellDef="let element"> {{ element.DateofJoining | date }} </td>
+      </ng-container>  
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element">   
+          <button mat-icon-button color="primary" (click)="openEditDetails(element)"> 
+            <mat-icon>edit</mat-icon>
+          </button> 
+          <button mat-icon-button color="warn" (click)="deleteEmployee(element.id)"> 
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Table Headers & Rows -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!-- Paginator -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

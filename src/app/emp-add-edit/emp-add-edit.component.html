@@ -1,0 +1,93 @@
+<div>  
+  <h1 mat-dialog-title>Enter Employee Details</h1>
+</div>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <!-- FullName and Email -->
+  <div class="row">
+    
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Full Name</mat-label>
+      <input matInput type="text" formControlName="fullName" placeholder="Kevin">
+      <mat-error *ngIf="employeeForm.get('fullName')?.hasError('required') && employeeForm.get('fullName')?.touched">
+          Full name is required.
+        </mat-error> 
+        <mat-error *ngIf="employeeForm.errors?.duplicateEmployee">
+          This combination of Full Name and Role already exists.
+        </mat-error>
+      
+        <!-- Error message for minlength -->
+        <mat-error *ngIf="employeeForm.get('fullName')?.hasError('minlength') && !employeeForm.get('fullName')?.hasError('required')">
+          Full Name should be at least 3 characters.
+        </mat-error> 
+
+    </mat-form-field>  
+     
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Mail</mat-label>
+      <input matInput type="email" formControlName="mail" placeholder="test@test.com">
+      <mat-error *ngIf="employeeForm.get('mail')?.invalid && employeeForm.get('mail')?.touched">
+        Enter a valid email address.
+      </mat-error>
+    </mat-form-field>
+
+     
+   
+  </div>
+
+  <!-- Roles and Experience -->
+  <div class="row"> 
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Roles</mat-label>
+      <mat-select formControlName="role">
+        <mat-option *ngFor="let role of employeeRoles" [value]="role">{{ role }}</mat-option>
+      </mat-select>
+    </mat-form-field>  
+     
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Experience</mat-label>
+      <input matInput type="text" formControlName="experience" placeholder="3 years">
+      
+       <!-- <mat-error *ngIf="employeeForm.get('experience')?.hasError('required') && employeeForm.get('experience')?.touched|| (employeeForm.get('role')?.value)"> 
+        Experience is required
+       </mat-error>
+     -->
+      <mat-error *ngIf="employeeForm.get('experience')?.hasError('min') && employeeForm.get('experience')?.touched || (employeeForm.get('role')?.value)">
+        Minimum experience required: {{ getMinExperience() }} years.
+      </mat-error>
+    </mat-form-field>
+     
+
+  </div> 
+
+  <!-- Experience and Contact No in one row -->
+  <div class="row">
+ 
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Contact No</mat-label>
+      <input matInput type="number" formControlName="contactNo" placeholder="0101010101">
+      <mat-error *ngIf="employeeForm.get('contactNo')?.invalid && employeeForm.get('contactNo')?.touched">
+        Contact number is required.
+      </mat-error>   
+      <mat-error *ngIf="employeeForm.get('contactNo')?.hasError('minlength')">
+          Contact number must be at least 9 digits.
+        </mat-error>
+
+    </mat-form-field> 
+     
+    <mat-form-field appearance="fill"> 
+      <mat-label>Date of Joining</mat-label> 
+      <input matInput [matDatepicker]="picker" formControlName="DateofJoining">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div> 
+   
+  
+
+  <!-- Save and Cancel Buttons -->
+  <div class="action">
+    <button mat-raised-button color="primary" type="submit" [disabled]="employeeForm.invalid">{{data ? 'Update':'Save'}}</button>
+    <button mat-raised-button color="warn" type="button" [mat-dialog-close]="false">Cancel</button>
+  </div>
+</form>

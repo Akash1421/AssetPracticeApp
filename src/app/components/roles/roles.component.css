@@ -1,0 +1,60 @@
+.header { 
+    width: 100%;
+    background: white;
+    padding: 15px 20px;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spacer { 
+    flex: 1;
+}
+
+.header span { 
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Button styling */
+.header button {
+    padding: 10px 20px; /* Adjust padding to match the other header button */
+    font-size: 16px; /* Adjust font size to match the other header button */
+    border-radius: 5px;
+    background-color: #3f51b5; /* Material Blue */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header button:hover {
+    background-color: #303f9f; /* Darker shade on hover */
+}
+
+/* .container { 
+    width: 90%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+table { 
+    width: 100%;
+    border-collapse: collapse;
+} 
+
+th, td { 
+    white-space: nowrap; 
+    padding: 10px;
+    text-align: left;
+} 
+
+mat-slide-toggle[disabled] {
+    pointer-events: none;
+    opacity: 0.6; /* Optional: visually make the disabled toggle look faded */
+}

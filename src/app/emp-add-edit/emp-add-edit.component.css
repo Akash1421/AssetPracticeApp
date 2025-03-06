@@ -1,0 +1,23 @@
+
+.row {
+    display: flex;
+    gap: 16px; 
+    margin-bottom: 16px; 
+  }
+  
+ 
+  .form-field {
+    flex: 1;
+  } 
+   
+  form{  
+    .action{ 
+      margin-top: 16px;  
+      display: flex;
+    }
+
+  }
+  .action button {
+    flex: 1;
+    height: 40px; /* Optional: Ensures equal button height */
+}
