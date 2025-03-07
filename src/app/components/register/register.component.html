@@ -39,8 +39,8 @@
                 <mat-form-field class="form-field"> 
                     <mat-label>Gender</mat-label>
                     <mat-select formControlName="gender">
-                        <mat-option>Male</mat-option>
-                        <mat-option>Female</mat-option>
+                        <mat-option value="Male">Male</mat-option>
+                        <mat-option value="Female">Female</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
@@ -66,6 +66,12 @@
                 <mat-label>Confirm Password</mat-label>
                 <input matInput formControlName="confirmpassword">
             </mat-form-field>
+           </div>
+
+           <!--save and cancel buttons-->
+           <div class="row"> 
+            <button mat-raised-button color="primary" type="button" [disabled]="registrationForm.invalid">save</button>
+            <button mat-raised-button color="danger" type="button" [mat-dialog-close]="false">cancel</button>
            </div>
         </div>
     </form>
